@@ -6,6 +6,7 @@ GEM
     colorize (0.7.7)
     columnize (0.9.0)
     json (1.8.2)
+    pg (0.18.1)
 
 PLATFORMS
   ruby
@@ -14,6 +15,7 @@ DEPENDENCIES
   byebug
   colorize
   json
+  pg
 
 BUNDLED WITH
    1.10.4

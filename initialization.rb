@@ -7,7 +7,7 @@ puts "Initializing...".blue
 Dir.glob('./resources/*.rb', &method(:require))
 Dir.glob('./resources/*/*.rb', &method(:require))
 Dir.glob('./services/*.rb', &method(:require))
-
+require './config/db.rb'
 
 puts "Defining globals...".blue
 # Def globals

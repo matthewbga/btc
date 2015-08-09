@@ -3,6 +3,7 @@ class Exchange
     @pairs = Array.new
     @name = config["name"]
     @price_url = config["price_url"]
+    @fee = config["fee"]
     self.refresh_data
     data_formatter
   end
