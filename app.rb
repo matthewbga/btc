@@ -1,5 +1,4 @@
 require './initialization.rb'
-exchanges.each do |name, exchange|
+exchanges.each do |_name, exchange|
   exchange.refresh_data
 end
-byebug
