@@ -10,7 +10,7 @@ puts 'Initializing...'.blue
 require './resources/db.rb'
 require './resources/utils.rb'
 Dir.glob('./resources/*/**/*.rb', &method(:require))
-exchanges = {}
+@exchanges = {}
 exchanges_config = Exchange.all
 exchanges_config.each do |config|
   puts "Configuring #{config['name']}...".blue
@@ -22,5 +22,5 @@ exchanges_config.each do |config|
   when 'BTC-e'
     newex = Btce.new(config)
   end
-  exchanges[config['name']] = newex if defined?(newex)
+  @exchanges[config['name']] = newex if defined?(newex)
 end

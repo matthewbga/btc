@@ -4,7 +4,7 @@ def main_loop
   @exited = false
   command = gets.chomp
   if command.downcase == 'p'
-    exchanges.each do |name, exchange|
+    @exchanges.each do |name, exchange|
       exchange.refresh_data
       puts '----------'.blue
       puts name.blue
