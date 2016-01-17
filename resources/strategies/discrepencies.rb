@@ -15,7 +15,9 @@ module Discrepencies
               quote: fp.quote.code,
               buy: sname,
               sell: fname,
-              diff: discrepency
+              diff: discrepency,
+              buy_price: fp.bid,
+              sell_price: sp.ask
             }
             possible_trades << trade
           end

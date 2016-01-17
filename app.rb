@@ -12,8 +12,23 @@ possible_trades.each do |trade|
   buy = trade[:buy]
   sell = trade[:sell]
   diff = trade[:diff]
+  buy_price = trade[:buy_price]
+  sell_price = trade[:sell_price]
   query = "insert into opportunities
-          (created_at, base, quote, buy_at, sell_at, diff) values
-          ('#{timestamp.to_s}', '#{base}', '#{quote}', '#{buy}', '#{sell}', #{diff})"
+          (created_at,
+          base, quote,
+          buy_at,
+          sell_at,
+          diff,
+          buy_price,
+          sell_price) values
+          ('#{timestamp}',
+          '#{base}',
+          '#{quote}',
+          '#{buy}',
+          '#{sell}',
+          #{diff},
+          #{buy_price},
+          #{sell_price})"
   Utils.db.execute(query)
 end
