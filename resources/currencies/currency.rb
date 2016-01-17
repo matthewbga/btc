@@ -3,7 +3,5 @@ class Currency
     @code = code
   end
 
-  def code
-    @code
-  end
+  attr_reader :code
 end

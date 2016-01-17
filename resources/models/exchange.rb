@@ -1,10 +1,10 @@
 class Exchange
   def initialize(config)
-    @pairs = Array.new
-    @name = config["name"]
-    @price_url = config["price_url"]
-    @fee = config["fee"]
-    self.refresh_data
+    @pairs = []
+    @name = config['name']
+    @price_url = config['price_url']
+    @fee = config['fee']
+    refresh_data
     data_formatter
   end
 
@@ -12,27 +12,21 @@ class Exchange
     @raw_data
   end
 
-  def price_url
-    @price_url
-  end
+  attr_reader :price_url
 
-  def name
-    @name
-  end
+  attr_reader :name
 
   def refresh_data
     @raw_data = http_client.getreq(@price_url)
   end
 
-  def pairs
-    @pairs
-  end
+  attr_reader :pairs
 
   def info
-    formatted = ""
-    self.pairs.each do |pair|
+    formatted = ''
+    pairs.each do |pair|
       formatted += "#{pair.base.code} - #{pair.quote.code}:\n Ask: #{pair.ask}\n Bid: #{pair.bid}\n Close: #{pair.close}\n"
     end
-    return formatted
+    formatted
   end
 end

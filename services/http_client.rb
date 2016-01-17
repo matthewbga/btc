@@ -10,8 +10,6 @@ class HttpClient
     http.use_ssl = true
     # http.verify_mode = OpenSSL::SSL::VERIFY_NONE # read into this
     @data = http.get(uri).body
-    return JSON.parse(@data)
+    JSON.parse(@data)
   end
-
-
 end

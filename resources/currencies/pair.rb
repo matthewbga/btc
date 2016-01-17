@@ -1,5 +1,5 @@
 class Pair
-  def initialize(base, quote, ask=1, bid=1, close=1)
+  def initialize(base, quote, ask = 1, bid = 1, close = 1)
     @base = Currency.new(base)
     @quote = Currency.new(quote)
     @ask = ask
@@ -7,23 +7,13 @@ class Pair
     @close = close
   end
 
-  def base
-    @base
-  end
+  attr_reader :base
 
-  def quote
-    @quote
-  end
+  attr_reader :quote
 
-  def ask
-    @ask
-  end
+  attr_reader :ask
 
-  def bid
-    @bid
-  end
+  attr_reader :bid
 
-  def close
-    @close
-  end
+  attr_reader :close
 end
