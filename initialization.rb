@@ -8,8 +8,8 @@ require 'net/http'
 require 'date'
 
 puts 'Initializing...'.blue
-require './resources/db.rb'
-require './resources/utils.rb'
+require_relative './resources/db.rb'
+require_relative './resources/utils.rb'
 Dir.glob('./resources/*/**/*.rb', &method(:require))
 @exchanges = {}
 exchanges_config = Exchange.all
