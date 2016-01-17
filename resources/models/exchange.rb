@@ -18,6 +18,7 @@ class Exchange
   end
 
   def refresh_data
+    @pairs = []
     @raw_data = Utils.http_client.getreq(@price_url)
     data_formatter
   end
