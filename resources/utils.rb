@@ -10,6 +10,6 @@ module Utils
   end
 
   def db
-    DB.instance
+    Db.instance
   end
 end
