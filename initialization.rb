@@ -1,7 +1,6 @@
 require 'yaml'
 require 'colorize'
 require 'json'
-require 'pry'
 require 'singleton'
 require 'pg'
 require 'net/http'
