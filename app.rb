@@ -1,3 +1,4 @@
+#!/usr/bin/env ruby
 require_relative './initialization.rb'
 @exchanges.each do |_name, exchange|
   exchange.refresh_data
