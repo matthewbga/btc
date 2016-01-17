@@ -1,4 +1,4 @@
-class DB
+class Db
   require 'singleton'
   require 'pg'
   attr_reader :client

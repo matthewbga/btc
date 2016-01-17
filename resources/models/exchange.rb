@@ -5,7 +5,7 @@ class Exchange
   attr_reader :raw_data
 
   def self.all
-    db.execute('select * from exchanges')
+    Utils::db.execute('select * from exchanges')
   end
 
   def initialize(config)
