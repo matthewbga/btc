@@ -1,16 +1,15 @@
 require 'yaml'
 require 'colorize'
 require 'json'
-require 'byebug'
+require 'pry'
 require 'singleton'
 require 'pg'
 require 'net/http'
 require 'date'
+require 'require_all'
 
 puts 'Initializing...'.blue
-require_relative './resources/db.rb'
-require_relative './resources/utils.rb'
-Dir.glob('./resources/*/**/*.rb', &method(:require))
+require_rel 'resources'
 @exchanges = {}
 exchanges_config = Exchange.all
 exchanges_config.each do |config|
