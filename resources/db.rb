@@ -1,6 +1,5 @@
 class Db
-  require 'singleton'
-  require 'pg'
+  include Singleton
   attr_reader :client
   def initialize
     @connection = {

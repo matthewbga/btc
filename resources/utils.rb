@@ -1,5 +1,5 @@
 module Utils
-  def http_client
+  def self.http_client
     HttpClient.instance
   end
 

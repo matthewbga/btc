@@ -5,7 +5,7 @@ class Exchange
   attr_reader :raw_data
 
   def self.all
-    Utils::db.execute('select * from exchanges')
+    Utils.db.execute('select * from exchanges')
   end
 
   def initialize(config)
@@ -18,7 +18,7 @@ class Exchange
   end
 
   def refresh_data
-    @raw_data = http_client.getreq(@price_url)
+    @raw_data = Utils.http_client.getreq(@price_url)
   end
 
   attr_reader :pairs

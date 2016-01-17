@@ -1,6 +1,5 @@
 class HttpClient
-  require 'singleton'
-  require 'net/http'
+  include Singleton
 
   def getreq(url)
     uri = URI.parse(url)

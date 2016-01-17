@@ -2,6 +2,9 @@ require 'yaml'
 require 'colorize'
 require 'json'
 require 'byebug'
+require 'singleton'
+require 'pg'
+require 'net/http'
 
 puts 'Initializing...'.blue
 require './resources/db.rb'
