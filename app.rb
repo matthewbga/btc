@@ -11,7 +11,7 @@ require './initialization.rb'
     diff = trade[:diff]
     query = "insert into opportunities
             (created_at, base_price, quote_price, buy_at, sell_at, diff) values
-            '#{timestamp.to_s}', '#{base}', '#{quote}', '#{buy}', '#{sell}', #{diff}"
+            ('#{timestamp.to_s}', '#{base}', '#{quote}', '#{buy}', '#{sell}', #{diff})"
     Utils.db.execute(query)
   end
 end
