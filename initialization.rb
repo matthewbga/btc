@@ -9,7 +9,7 @@ require 'net/http'
 puts 'Initializing...'.blue
 require './resources/db.rb'
 require './resources/utils.rb'
-Dir.glob('./resources/*/*.rb', &method(:require))
+Dir.glob('./resources/*/**/*.rb', &method(:require))
 exchanges_config = Exchange.all
 exchanges_config.each do |config|
   puts "Configuring #{config['name']}...".blue
