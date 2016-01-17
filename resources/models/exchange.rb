@@ -4,7 +4,7 @@ class Exchange
   attr_reader :name
   attr_reader :raw_data
 
-  def all
+  def self.all
     db.execute('select * from exchanges')
   end
 

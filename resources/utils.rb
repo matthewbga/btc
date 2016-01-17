@@ -1,6 +1,6 @@
 module Utils
   def http_client
-    @http_client || HttpClient.new
+    HttpClient.instance
   end
 
   def exchanges
