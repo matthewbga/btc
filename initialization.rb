@@ -4,7 +4,8 @@ require 'json'
 require 'byebug'
 
 puts 'Initializing...'.blue
-Dir.glob('./resources/*.rb', &method(:require))
+require 'db.rb'
+require 'utils.rb'
 Dir.glob('./resources/*/*.rb', &method(:require))
 exchanges_config = Exchange.all
 exchanges_config.each do |config|
