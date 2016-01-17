@@ -3,7 +3,7 @@ require './initialization.rb'
   exchange.refresh_data
   possible_trades = Discrepencies.calculate(@exchanges)
   possible_trades.each do |trade|
-    timestamp = DateTime.now
+    timestamp = DateTime.now.strftime('%Y-%m-%d %H:%M:%S')
     base = trade[:base]
     quote = trade[:quote]
     buy = trade[:buy]
