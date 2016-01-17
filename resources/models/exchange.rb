@@ -1,4 +1,13 @@
 class Exchange
+  include Utils
+  attr_reader :price_url
+  attr_reader :name
+  attr_reader :raw_data
+
+  def all
+    db.execute('select * from exchanges')
+  end
+
   def initialize(config)
     @pairs = []
     @name = config['name']
@@ -7,14 +16,6 @@ class Exchange
     refresh_data
     data_formatter
   end
-
-  def get_raw
-    @raw_data
-  end
-
-  attr_reader :price_url
-
-  attr_reader :name
 
   def refresh_data
     @raw_data = http_client.getreq(@price_url)
