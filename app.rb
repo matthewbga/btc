@@ -1,4 +1,4 @@
-require './resources/initialization.rb'
+require './initialization.rb'
 exchanges.each do |_name, exchange|
   exchange.refresh_data
 end

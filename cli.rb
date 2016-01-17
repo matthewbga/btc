@@ -1,4 +1,4 @@
-require './resources/initialization.rb'
+require './initialization.rb'
 
 def main_loop
   @exited = false
