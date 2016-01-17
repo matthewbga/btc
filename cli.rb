@@ -14,7 +14,7 @@ def main_loop
     puts '----------'.green
     puts 'DISCREPENCIES'.green
     puts '----------'.green
-    puts Discrepencies.get_discrepencies(@exchanges)
+    puts Discrepencies.calculate(@exchanges)
     puts '----------'.green
   elsif command.downcase == 'e'
     @exited = true

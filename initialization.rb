@@ -5,6 +5,7 @@ require 'byebug'
 require 'singleton'
 require 'pg'
 require 'net/http'
+require 'date'
 
 puts 'Initializing...'.blue
 require './resources/db.rb'

@@ -3,6 +3,7 @@ class Exchange
   attr_reader :price_url
   attr_reader :name
   attr_reader :raw_data
+  attr_reader :pairs
 
   def self.all
     Utils.db.execute('select * from exchanges')
@@ -14,14 +15,12 @@ class Exchange
     @price_url = config['price_url']
     @fee = config['fee']
     refresh_data
-    data_formatter
   end
 
   def refresh_data
     @raw_data = Utils.http_client.getreq(@price_url)
+    data_formatter
   end
-
-  attr_reader :pairs
 
   def info
     formatted = ''

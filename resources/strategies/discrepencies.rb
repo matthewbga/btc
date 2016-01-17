@@ -1,5 +1,5 @@
 module Discrepencies
-  def self.get_discrepencies(exchanges)
+  def self.calculate(exchanges)
     possible_trades = []
     exchanges.each do |fname, fe|
       exchanges.each do |sname, se|
@@ -11,11 +11,11 @@ module Discrepencies
                         (fp.bid > sp.ask)
             discrepency = fp.bid - sp.ask
             trade = {
-              'base' => fp.base.code,
-              'quote' => fp.quote.code,
-              'buy' => sname,
-              'sell' => fname,
-              'diff' => discrepency
+              base: fp.base.code,
+              quote: fp.quote.code,
+              buy: sname,
+              sell: fname,
+              diff: discrepency
             }
             possible_trades << trade
           end
