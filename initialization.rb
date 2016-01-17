@@ -10,6 +10,7 @@ puts 'Initializing...'.blue
 require './resources/db.rb'
 require './resources/utils.rb'
 Dir.glob('./resources/*/**/*.rb', &method(:require))
+exchanges = {}
 exchanges_config = Exchange.all
 exchanges_config.each do |config|
   puts "Configuring #{config['name']}...".blue
