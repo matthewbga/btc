@@ -1,8 +1,8 @@
 module Discrepencies
   def self.calculate(exchanges)
     possible_trades = []
-    exchanges.each do |fname, fe|
-      exchanges.each do |sname, se|
+    exchanges.each do |fe|
+      exchanges.each do |se|
         next unless fe.name != se.name
         fe.pairs.each do |fp|
           se.pairs.each do |sp|
@@ -13,8 +13,8 @@ module Discrepencies
             trade = {
               base: fp.base,
               quote: fp.quote,
-              buy: sname,
-              sell: fname,
+              buy: se.name,
+              sell: fe.name,
               bid: fp.bid,
               ask: sp.ask,
               spread: discrepency
