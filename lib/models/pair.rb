@@ -1,7 +1,7 @@
 class Pair
   def initialize(base, quote, ask = 1, bid = 1, close = 1)
-    @base = Currency.new(base)
-    @quote = Currency.new(quote)
+    @base = base
+    @quote = quote
     @ask = ask
     @bid = bid
     @close = close

@@ -6,18 +6,18 @@ module Discrepencies
         next unless fe.name != se.name
         fe.pairs.each do |fp|
           se.pairs.each do |sp|
-            next unless (fp.quote.code == sp.quote.code) &&
-                        (fp.base.code == sp.base.code) &&
+            next unless (fp.quote == sp.quote) &&
+                        (fp.base == sp.base) &&
                         (fp.bid > sp.ask)
             discrepency = fp.bid - sp.ask
             trade = {
-              base: fp.base.code,
-              quote: fp.quote.code,
+              base: fp.base,
+              quote: fp.quote,
               buy: sname,
               sell: fname,
-              diff: discrepency,
-              buy_price: fp.bid,
-              sell_price: sp.ask
+              bid: fp.bid,
+              ask: sp.ask,
+              spread: discrepency
             }
             possible_trades << trade
           end

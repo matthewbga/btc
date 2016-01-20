@@ -1,11 +1,11 @@
 #!/usr/bin/env ruby
 require_relative './initialization.rb'
-
+@exchanges = Exchange.all
 def main_loop
   @exited = false
   command = gets.chomp
   if command.downcase == 'p'
-    @exchanges.each do |name, exchange|
+    @exchanges.each do |exchange|
       exchange.refresh_data
       puts '----------'.blue
       puts name.blue
