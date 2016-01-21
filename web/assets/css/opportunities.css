@@ -1,0 +1,15 @@
+html, body {
+  width: 100%;
+  text-align: center;
+}
+table {
+  text-align: center;
+}
+td {
+  padding: 10px;
+  border-right: 1px black solid;
+  border-bottom: 1px black solid;
+}
+tr.heading td {
+  font-weight: bold
+}

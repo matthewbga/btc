@@ -1,14 +1,11 @@
 doctype html
 html
   head
-    = js :main
-    = js :opportunities
-    = css :main
-    = css :opportunities
+    link rel="stylesheet" media="screen, projection" href="/css/opportunities.css"
     title Opportunities
   body
     table.opportunities
-      tr
+      tr.heading
         td Base
         td Quote
         td Buy at
